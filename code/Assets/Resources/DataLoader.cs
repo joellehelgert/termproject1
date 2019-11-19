@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class DataLoader : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class DataLoader : MonoBehaviour
     public List<School> polytechnicalSchools;
     public List<School> academicHighSchools;
     public List<School> specialNeedsSchools;
- 
+    public List<AgeDistribution> ageDistributions;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,7 @@ public class DataLoader : MonoBehaviour
         LoadSecondarySchools();
         LoadPolytechnicalSchools();
         LoadAcademicHighSchools();
+        LoadAgeStructure();
     }
 
     // Update is called once per frame
@@ -33,11 +35,30 @@ public class DataLoader : MonoBehaviour
 
     }
 
+    // ---- Helpers ----
     string[] GetDataRows(string path)
     {
         TextAsset data = Resources.Load<TextAsset>(path);
         return data.text.Split(new char[] { '\n' });
     }
+
+    // ---- Age ----
+    public void LoadAgeStructure()
+    {
+        string[] dataRows = GetDataRows("Age/data");
+        Debug.Log("data: " + dataRows[0]);
+
+        for (int i = 1; i < dataRows.Length - 1; i++)
+        {
+            string[] row = dataRows[i].Split(new char[] { ';' });
+            AgeDistribution distribution = new AgeDistribution();
+            distribution.district = (Districts)(i - 1);
+            Array.Copy(row, distribution.ages, 2);
+            ageDistributions.Add(distribution);
+            Debug.Log(distribution.district + ": " + distribution.ages.ToString());
+        }
+    }
+    // ---- Schools ----
 
     public void LoadSpecialNeedsSchools()
     {
@@ -114,7 +135,6 @@ public class DataLoader : MonoBehaviour
             float.TryParse(row[8], out k.longitude);
 
             nonScholaric.Add(k);
-            Debug.Log(k.institiution);
         }
 
         return nonScholaric;
@@ -122,7 +142,6 @@ public class DataLoader : MonoBehaviour
 
     private List<School> ConvertSchool(string[] dataRows, SchoolType type)
     {
-        Debug.Log(dataRows[0]);
         List<School> schools = new List<School>();
         for (int i = 1; i < dataRows.Length - 1; i++)
         {
@@ -141,7 +160,6 @@ public class DataLoader : MonoBehaviour
             // float.TryParse(elementarySchool[5], out school.longitude);
 
             schools.Add(school);
-            Debug.Log(school.name);
         }
        
         return schools;
