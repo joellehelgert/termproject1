@@ -3,5 +3,6 @@ public enum NonScholaricType
 {
     Kindergarten,
     DayCareCenter,
-    ToddlerGroup
+    ToddlerGroup,
+    YouthCenter
 }

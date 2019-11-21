@@ -10,7 +10,7 @@ public class NonScholaric
     public string category;
     public int Y;
     public int X;
-    public string uniqueAdress;
+    public string uniqueAddress;
     public float latitude;
     public float longitude;
     public NonScholaricType type;
