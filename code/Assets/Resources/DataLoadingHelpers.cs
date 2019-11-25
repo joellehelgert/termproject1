@@ -113,45 +113,46 @@ public static class DataLoadingHelpers
     public static HousingInformation[] ParseFlatInformation<T>(HousingInformation[] housingInformation, string[] dataRows, string prop)
     {
 
-        for (int i = 2; i < dataRows.Length - 1; i++)
+        for (int i = 1; i < dataRows.Length - 1; i++)
         {
             string[] row = dataRows[i].Split(new char[] { ';' });
             int.TryParse(row[0], out int districtNumber);
+            districtNumber--;
 
             if (housingInformation[districtNumber] == null)
-            {
-                housingInformation[districtNumber] = new HousingInformation();
-                housingInformation[districtNumber].district = (Districts)districtNumber;
+                {
+                housingInformation[districtNumber] = new HousingInformation
+                {
+                    district = (Districts)districtNumber
+                };
             }
 
 
-            
-            var information = Enum.GetValues(typeof(T));
-            int[] counts = new int[information.Length];
-            int counter = 0;
-            foreach (var inf in information)
-            {
-                int.TryParse(row[(int)inf + 2], out counts[(int)inf]);
-                counter += counts[(int)inf];
-            }
 
-            switch(prop)
-            {
-                case "RoomsPerFlat":
-                    housingInformation[i].FlatCount = counter;
-                    housingInformation[i].RoomsPerFlat = counts;
-                    break;
-                case "FlatsPerBuilding":
-                    housingInformation[i].FlatsPerBuilding = counts;
-                    break;
-                case "FloorSpace":
-                    housingInformation[i].FloorSpace = counts;
-                    break;
+                var information = Enum.GetValues(typeof(T));
+                int[] counts = new int[information.Length];
+                int counter = 0;
+                foreach (var inf in information)
+                {
+                    int.TryParse(row[(int)inf + 2], out counts[(int)inf]);
+                    counter += counts[(int)inf];
+                }
 
-            }
-            Debug.Log("---------- " + housingInformation[i].district + " -------------");
-            Debug.Log("Rooms per flat: " + housingInformation[i].RoomsPerFlat + "flats per building: " + housingInformation[i].FlatsPerBuilding +
-                "floor space: " + housingInformation[i].FloorSpace + "flats " + housingInformation[i].FlatCount);
+
+                switch (prop)
+                {
+                    case "RoomsPerFlat":
+                        housingInformation[districtNumber].FlatCount = counter;
+                        housingInformation[districtNumber].RoomsPerFlat = counts;
+                        break;
+                    case "FlatsPerBuilding":
+                        housingInformation[districtNumber].FlatsPerBuilding = counts;
+                        break;
+                    case "FloorSpace":
+                        housingInformation[districtNumber].FloorSpace = counts;
+                        break;
+
+                }
         }
         return housingInformation;
     }

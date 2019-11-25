@@ -16,6 +16,8 @@ public class DataLoader : MonoBehaviour
     public List<School> specialNeedsSchools;
     public List<AgeDistribution> ageDistributions;
     public List<Activity> activities;
+    public List<Hospital> hospitals;
+
     // sorted by district numbers
     public HousingInformation[] housingInformation; 
 
@@ -34,11 +36,33 @@ public class DataLoader : MonoBehaviour
         LoadYouthCenters();
         LoadActivities();
         LoadHousingInformation();
+        LoadHospitals();
+    }
+
+    public void LoadHospitals()
+    {
+        hospitals = new List<Hospital>();
+        string[] dataRows = DataLoadingHelpers.GetDataRows("Health/hospitals");
+        for (int i = 1; i < dataRows.Length - 1; i++)
+        {
+            string[] row = dataRows[i].Split(new char[] { ';' });
+            Hospital hospital = new Hospital
+            {
+                name = row[0],
+                address = row[1],
+                url = row[2],
+                category = row[3]
+            };
+
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[7]), out hospital.latitude);
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[8]), out hospital.longitude);
+
+            hospitals.Add(hospital);
+            Debug.Log("hospital: " + hospital.name);
+        }
     }
 
     // ---- Flats ----
-  
-
     public void LoadHousingInformation()
     {
         string[] dataFloorSpace = DataLoadingHelpers.GetDataRows("HousingInformation/floorSpace");
@@ -48,6 +72,8 @@ public class DataLoader : MonoBehaviour
         var districts = Enum.GetValues(typeof(Districts));
         housingInformation = new HousingInformation[districts.Length];
         housingInformation = DataLoadingHelpers.ParseFlatInformation<RoomsPerFlat>(housingInformation, dataFlatRooms, "RoomsPerFlat");
+        housingInformation = DataLoadingHelpers.ParseFlatInformation<RoomsPerFlat>(housingInformation, dataFloorSpace, "FloorSpace");
+        housingInformation = DataLoadingHelpers.ParseFlatInformation<RoomsPerFlat>(housingInformation, dataFlatsPerBuilding, "FlatsPerBuilding");
     }
 
     // ---- Activities ----
