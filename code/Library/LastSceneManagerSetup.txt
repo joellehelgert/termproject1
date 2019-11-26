@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/dataTest.unity
+- path: Assets/Scenes/Vuforia.unity
   isLoaded: 1
   isActive: 1
