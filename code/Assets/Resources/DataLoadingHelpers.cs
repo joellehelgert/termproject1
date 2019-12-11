@@ -106,6 +106,7 @@ public static class DataLoadingHelpers
         Regex regex = new Regex(Regex.Escape(" "));
         formated = regex.Replace(formated, ".", 1);
         formated = formated.Replace(" ", "");
+        formated = formated.Replace(",", ".");
 
         return formated;
     }

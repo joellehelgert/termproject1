@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class DataLoader : MonoBehaviour
+[CreateAssetMenu(fileName = "DataStorage", menuName = "DataStorage")]
+public class DataLoader : ScriptableObject
 {
     public List<NonScholaric> kindergartens;
     public List<NonScholaric> dayCareCenter;
@@ -17,12 +17,13 @@ public class DataLoader : MonoBehaviour
     public List<AgeDistribution> ageDistributions;
     public List<Activity> activities;
     public List<Hospital> hospitals;
+    public List<Transport> transports;
 
     // sorted by district numbers
-    public HousingInformation[] housingInformation; 
+    public HousingInformation[] housingInformation;
 
     // Use this for initialization
-    void Start()
+    public void LoadAllData()
     {
         LoadToddlerGroups();
         LoadKindergartens();
@@ -37,6 +38,51 @@ public class DataLoader : MonoBehaviour
         LoadActivities();
         LoadHousingInformation();
         LoadHospitals();
+        // LoadPublicTransport();
+    }
+
+    // TODO coordinates are in Grauß-Krüger system ONLY
+    public void LoadPublicTransport() {
+        string[] dataRows = DataLoadingHelpers.GetDataRows("Transportation/Stops");
+        string stop = "";
+        float longitude = 0f;
+        float latitude = 0f;
+        List<string> lines = new List<string>();
+        List<string> directions = new List<string>();
+
+        for (int i = 1; i < dataRows.Length - 1; i++)
+        {
+            string[] row = dataRows[i].Split(new char[] { ';' });
+            if(stop != row[0])
+            {
+                bool isBim = lines[0].Contains("00");
+                Transport transport = new Transport
+                {
+                    name = stop,
+                    longitude = longitude,
+                    latitude = latitude,
+                    lines = lines,
+                    isBim = isBim,
+                    directions = directions,
+                };
+
+                transports.Add(transport);
+                lines.Clear();
+                directions.Clear();
+                Debug.Log("name: " + stop);
+            }
+
+            stop = row[0];
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[4]), out latitude);
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[5]), out longitude);
+
+            string[] lineArray = row[2].Split(new char[] { ',' });
+            foreach(var line in lineArray) { lines.Add(line); Debug.Log("Lines: " + line); }
+
+            string[] dirArray = row[2].Split(new char[] { ',' });
+            foreach (var dir in dirArray) { directions.Add(dir); }
+
+        }
     }
 
     public void LoadHospitals()
@@ -58,7 +104,6 @@ public class DataLoader : MonoBehaviour
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[8]), out hospital.longitude);
 
             hospitals.Add(hospital);
-            Debug.Log("hospital: " + hospital.name);
         }
     }
 

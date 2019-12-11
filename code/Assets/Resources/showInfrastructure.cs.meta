@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d04ed60161e09444a97a5e7c26295d3d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hospital: {fileID: 7157106571767760767, guid: 653a16b235fac40c4816a5523c68a496,
+      type: 3}
+  - dataLoader: {fileID: 11400000, guid: 4f0a6374e181e4a3ca3a479f2b33af02, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
