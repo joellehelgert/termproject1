@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class Utils
 {
-    // lower 48.3073220 (x), 14.2855114 (y)
-    // upper 48.3092174, 14.2841256
-    // lower x = -0.5079 y = -6.69 z = 0.2024
-    // upper x = -0.5236 y = -6.69 z = 0.2355
-
     // The ref point ONLY works it the image target is at (0/0/0)
+    // -------- GEO - Coordinates References ----------
     static float refLatitude1 = 48.3073220f;
     static float refLatitude2 = 48.3092174f;
     static float refLongitude1 = 14.2855114f;
@@ -25,30 +21,56 @@ public class Utils
     static float lengthX = refPosition1_x - refPosition2_x;
     static float lengthY = refPosition1_y - refPosition2_y;
 
+    // -------- Gauss-Küger - Coordinates References ----------
+    static float refX1 = 72205;
+    static float refX2 = 72142;
+    static float refY1 = 352133;
+    static float refY2 = 352067;
 
-    public float ConvertRealXToGameX(float latitude)
+    static float refPosition3_x = -0.4683766f;
+    static float refPosition3_y = -0.2757165f;
+    static float refPosition4_x = -0.4627879f;
+    static float refPosition4_y = -0.2554789f;
+
+    static float lengthGaussX= refX1 - refX2;
+    static float lengthGaussY = refY1 - refY2;
+    static float lengthGameX = refPosition3_x - refPosition4_x;
+    static float lengthGameY = refPosition3_y - refPosition4_y;
+
+
+    public Vector2 ConvertGeoCoordinates(float latitude, float longitude)
     {
-        Debug.Log("Latitude" + latitude);
-        // Get distance to reference Point
-        // divide by coordinate based length -> you got how many "parts" you are away
-        // the "parts"-count is the same in game space so you only need to multiply by positionLength
-        float distance = latitude - refLatitude1;
+        float lat = ConvertRealXToGameX(latitude, refLatitude1, lengthLat, lengthX, refPosition1_x);
+        float lon = ConvertRealYToGameY(longitude, refLongitude1, lengthLong, lengthY, refPosition1_y);
+
+        return new Vector2(lat, lon);
+       
+    }
+
+    public Vector2 ConvertGaussCoordinates(float x, float y)
+    {
+        float lat = ConvertRealXToGameX(y, refX1, lengthGaussX, lengthGameX, refPosition3_x);
+        float lon = ConvertRealYToGameY(x, refY1, lengthGaussY, lengthGameY, refPosition3_y);
+
+        return new Vector2(lat, lon);
+
+    }
+
+    public float ConvertRealXToGameX(float latitude, float refLatitude, float lengthLat, float lengthX, float refPosition)
+    {
+        float distance = latitude - refLatitude;
         float parts = distance / lengthLat;
         float positionX = parts * lengthX;
 
-        return refPosition1_x + positionX;
+        return refPosition + positionX;
     }
 
-    public float ConvertRealYToGameY(float longitude)
+    public float ConvertRealYToGameY(float longitude, float refLongitude, float lengthLon, float lengthY, float refPosition)
     {
-        Debug.Log("Longitude" + longitude);
-        // Get distance to reference Point
-        // divide by coordinate based length -> you got how many "parts" you are away
-        // the "parts"-count is the same in game space so you only need to multiply by positionLength
-        float distance = longitude - refLongitude1;
-        float parts = distance / lengthLong;
+        float distance = longitude - refLongitude;
+        float parts = distance / lengthLon;
         float positionY = parts * lengthY;
 
-        return refPosition1_y + positionY;
+        return refPosition + positionY;
     }
 }

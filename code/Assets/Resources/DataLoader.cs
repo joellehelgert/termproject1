@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "DataStorage", menuName = "DataStorage")]
 public class DataLoader : ScriptableObject
@@ -33,34 +34,39 @@ public class DataLoader : ScriptableObject
         LoadSecondarySchools();
         LoadPolytechnicalSchools();
         LoadAcademicHighSchools();
-        LoadAgeStructure();
-        LoadYouthCenters();
         LoadActivities();
-        LoadHousingInformation();
         LoadHospitals();
-        // LoadPublicTransport();
+        LoadPublicTransport();
+
+        LoadYouthCenters();
+        //LoadHousingInformation();
+        //LoadAgeStructure();
     }
 
-    // TODO coordinates are in Grauß-Krüger system ONLY
     public void LoadPublicTransport() {
         string[] dataRows = DataLoadingHelpers.GetDataRows("Transportation/Stops");
         string stop = "";
-        float longitude = 0f;
-        float latitude = 0f;
+        float x = 0f;
+        float y = 0f;
         List<string> lines = new List<string>();
         List<string> directions = new List<string>();
+        transports = new List<Transport>();
 
         for (int i = 1; i < dataRows.Length - 1; i++)
         {
+            Debug.Log("i: " + i + " datarow " + dataRows.Length);
             string[] row = dataRows[i].Split(new char[] { ';' });
-            if(stop != row[0])
+            Debug.Log("row length: " + row.Length);
+            if(stop != row[0] && stop != "")
             {
+                Debug.Log("lines: " + lines.Count);
                 bool isBim = lines[0].Contains("00");
+                Debug.Log("after lines access");
                 Transport transport = new Transport
                 {
                     name = stop,
-                    longitude = longitude,
-                    latitude = latitude,
+                    x = x,
+                    y = y,
                     lines = lines,
                     isBim = isBim,
                     directions = directions,
@@ -71,10 +77,12 @@ public class DataLoader : ScriptableObject
                 directions.Clear();
                 Debug.Log("name: " + stop);
             }
-
+            
             stop = row[0];
-            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[4]), out latitude);
-            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[5]), out longitude);
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[5]), out y);
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[4]), out x);
+
+            Debug.Log("row " + row.Length);
 
             string[] lineArray = row[2].Split(new char[] { ',' });
             foreach(var line in lineArray) { lines.Add(line); Debug.Log("Lines: " + line); }
@@ -144,8 +152,6 @@ public class DataLoader : ScriptableObject
 
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[12]), out activity.latitude);
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[13]), out activity.longitude);
-
-            activity.type = row[0] == "Sportanlage" ? ActivityType.Sportsground : ActivityType.Playground;
             activity.detailedActivityType = DataLoadingHelpers.GetDetailedActivityType(row[6]);
 
             activities.Add(activity);
@@ -235,7 +241,7 @@ public class DataLoader : ScriptableObject
     public void LoadToddlerGroups()
     {
         string[] dataRows = DataLoadingHelpers.GetDataRows("Education/toddlerGroups");
-        dayCareCenter = DataLoadingHelpers.ConvertNonScholaric(dataRows, NonScholaricType.ToddlerGroup);
+        toddlerGroups = DataLoadingHelpers.ConvertNonScholaric(dataRows, NonScholaricType.ToddlerGroup);
     }
 
 }

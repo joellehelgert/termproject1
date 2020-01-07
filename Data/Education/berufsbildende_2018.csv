@@ -1,13 +1,13 @@
-Bezeichnung;Klassen;Schüler;Schülerinnen
-Bundeshandelsakademie (Rudigierstraße 6);31;286;432
-Bundeshandelsakademie (Aubrunnerweg 4);23;208;249
-Höhere technische Bundeslehranstalt (Goethestraße 17);69;897;762
-Höhere technische Bundeslehranstalt   (Paul-Hahn-Straße 4);74;1646;120
-Höhere Bundeslehranstalt für künstlerische Gestaltung (Garnisonstraße 25);10;30;275
-Höhere Bundeslehranstalt für Mode- und Bekleidungstechnik und für wirtschaftliche Berufe (Blütenstraße 23);22;40;450
-Höhere Bundeslehranstalt für wirtschaftliche Berufe (Aubrunnerweg 4);17;39;342
-Höhere Bundeslehranstalt für wirtschaftliche Berufe (Landwiedstraße 80);34;98;623
-Höhere Lehranstalt für wirtschaftliche Berufe des Schulvereins der Kreuzschwestern (Stockhofstraße 10);10;58;191
-Fachschule für wirtschaftliche Berufe der Schwestern Oblatinnen des Heiligen Franz von Sales (Kapellenstraße 8-10);4;7;65
-Fachschule für Sozialberufe der Caritas der Diözese Linz (Schiefersederweg 53);10;26;187
-Höhere Bundeslehranstalt für Land- und Ernährungswirtschaft (Elmbergweg 65);13;13;354
+Bezeichnung;Klassen;SchŸler;SchŸlerinnen;Latitude;Longitude
+Bundeshandelsakademie (Rudigierstraße 6);31;286;432;48,33421;14,320747
+Bundeshandelsakademie (Aubrunnerweg 4);23;208;249;48,300926;14,289335
+Hšhere technische Bundeslehranstalt (Goethestra§e 17);69;897;762;48,297273;14,294867
+Hšhere technische Bundeslehranstalt   (Paul-Hahn-Straße 4);74;1646;120;48,30623;14,310836
+Hšhere Bundeslehranstalt fŸr kŸnstlerische Gestaltung (Garnisonstra§e 25);10;30;275;48,30137;14,311613
+Hšhere Bundeslehranstalt fŸr Mode- und Bekleidungstechnik und fŸr wirtschaftliche Berufe (BlŸtenstra§e 23);22;40;450;48,315001;14,283361
+Hšhere Bundeslehranstalt fŸr wirtschaftliche Berufe (Aubrunnerweg 4);17;39;342;48,334135;14,320397
+Hšhere Bundeslehranstalt fŸr wirtschaftliche Berufe (Landwiedstra§e 80);34;98;623;48,267476;14,284474
+Hšhere Lehranstalt fŸr wirtschaftliche Berufe des Schulvereins der Kreuzschwestern (Stockhofstra§e 10);10;58;191;48,297167;14,285765
+Fachschule fŸr wirtschaftliche Berufe der Schwestern Oblatinnen des Heiligen Franz von Sales (Kapellenstra§e 8-10);4;7;65;48,311229;14,279194
+Fachschule fŸr Sozialberufe der Caritas der Dišzese Linz (Schiefersederweg 53);10;26;187;48,332365;14,276565
+Hšhere Bundeslehranstalt fŸr Land- und ErnŠhrungswirtschaft (Elmbergweg 65);13;13;354;48,347592;14,328047

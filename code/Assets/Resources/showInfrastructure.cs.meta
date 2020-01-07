@@ -4,7 +4,18 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - hospital: {fileID: 7157106571767760767, guid: 653a16b235fac40c4816a5523c68a496,
+  - hospital: {instanceID: 0}
+  - busStop: {instanceID: 0}
+  - train: {instanceID: 0}
+  - nonScholaric: {instanceID: 0}
+  - basketball: {fileID: 6545137744239392468, guid: f3370db7ff1af4b5bbc5adbb268336ce,
+      type: 3}
+  - playground: {instanceID: 0}
+  - higherEducation: {fileID: 2441345627249570312, guid: 84d6deb1161cf4785aef931a9e152de3,
+      type: 3}
+  - lowerEducation: {instanceID: 0}
+  - skateTrack: {instanceID: 0}
+  - volleyball: {fileID: 5338318775084865839, guid: 8742fd4da4e0e40d790b3a630c103230,
       type: 3}
   - dataLoader: {fileID: 11400000, guid: 4f0a6374e181e4a3ca3a479f2b33af02, type: 2}
   executionOrder: 0
