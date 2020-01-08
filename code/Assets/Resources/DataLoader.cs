@@ -39,8 +39,8 @@ public class DataLoader : ScriptableObject
         LoadPublicTransport();
 
         LoadYouthCenters();
-        //LoadHousingInformation();
-        //LoadAgeStructure();
+        LoadHousingInformation();
+        LoadAgeStructure();
     }
 
     public void LoadPublicTransport() {
@@ -56,12 +56,10 @@ public class DataLoader : ScriptableObject
         {
             Debug.Log("i: " + i + " datarow " + dataRows.Length);
             string[] row = dataRows[i].Split(new char[] { ';' });
-            Debug.Log("row length: " + row.Length);
             if(stop != row[0] && stop != "")
             {
                 Debug.Log("lines: " + lines.Count);
                 bool isBim = lines[0].Contains("00");
-                Debug.Log("after lines access");
                 Transport transport = new Transport
                 {
                     name = stop,
@@ -75,7 +73,6 @@ public class DataLoader : ScriptableObject
                 transports.Add(transport);
                 lines.Clear();
                 directions.Clear();
-                Debug.Log("name: " + stop);
             }
             
             stop = row[0];
@@ -85,7 +82,7 @@ public class DataLoader : ScriptableObject
             Debug.Log("row " + row.Length);
 
             string[] lineArray = row[2].Split(new char[] { ',' });
-            foreach(var line in lineArray) { lines.Add(line); Debug.Log("Lines: " + line); }
+            foreach(var line in lineArray) { lines.Add(line); }
 
             string[] dirArray = row[2].Split(new char[] { ',' });
             foreach (var dir in dirArray) { directions.Add(dir); }

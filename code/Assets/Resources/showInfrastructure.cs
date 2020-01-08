@@ -22,7 +22,7 @@ public class showInfrastructure : MonoBehaviour
 		dataLoader.LoadAllData();
 
         // working 
-        //ShowHospitals();
+        ShowHospitals();
         //ShowToddlerGroups();
         //ShowDayCareCenters();
         //ShowKindergardens();
@@ -32,10 +32,10 @@ public class showInfrastructure : MonoBehaviour
         //ShowPolytechnicalSchools();
         //ShowSecondarySchools();
         // ShowElementarySchools();
-        ShowActivities();
+        // ShowActivities();
 
         // Gauss
-		// ShowPublicTransport();
+		ShowPublicTransport();
     }
 
     // Update is called once per frame
@@ -51,6 +51,7 @@ public class showInfrastructure : MonoBehaviour
 		{
             Vector2 vector = util.ConvertGeoCoordinates(h.latitude, h.longitude);
 			GameObject hospitalVisual;
+            Debug.Log("position of kh " + h.name + " is at x: " + vector.x + " and y: " + vector.y);
             hospitalVisual = (Instantiate(hospital, new Vector3(vector.x, 0, vector.y), Quaternion.identity) as GameObject);
 			hospitalVisual.transform.parent = transform;
 		}
