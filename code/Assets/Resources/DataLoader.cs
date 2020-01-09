@@ -17,6 +17,7 @@ public class DataLoader : MonoBehaviour
     public List<AgeDistribution> ageDistributions;
     public List<Activity> activities;
     public List<Hospital> hospitals;
+    public List<Districts> selectedDistricts;
 
     // sorted by district numbers
     public HousingInformation[] housingInformation; 
@@ -37,6 +38,8 @@ public class DataLoader : MonoBehaviour
         LoadActivities();
         LoadHousingInformation();
         LoadHospitals();
+        selectedDistricts = new List<Districts>();
+        selectedDistricts.Add(Districts.InnereStadt);
     }
 
     public void LoadHospitals()
@@ -118,13 +121,14 @@ public class DataLoader : MonoBehaviour
             string[] row = dataRows[i].Split(new char[] { ';' });
             AgeDistribution distribution = new AgeDistribution
             {
-                ages = new int[row.Length - 2],
+                ages = new List<int>(),
                 district = (Districts)(i - 1)
             };
 
             for(int age = 2; age < dataRows.Length -1; age++)
             {
-                int.TryParse(dataRows[age], out distribution.ages[age]);
+                int.TryParse(dataRows[age], out int results);
+                distribution.ages.Add(results); 
             }
 
             ageDistributions.Add(distribution);
