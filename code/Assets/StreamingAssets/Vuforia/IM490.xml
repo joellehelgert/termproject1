@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="1000_8" size="1.000000 0.764270" />
+    <ImageTarget name="linz_base_4" size="1.000000 1.805594" />
+    <ImageTarget name="linz_base_5" size="1.000000 1.813202" />
+    <ImageTarget name="1000" size="2.000000 2.924680" />
+    <ImageTarget name="1000_8jpg" size="1.000000 0.764270" />
+    <ImageTarget name="1000_7jpg" size="1.000000 0.763069" />
+    <ImageTarget name="1000_6jpg" size="1.000000 0.699932" />
+    <ImageTarget name="1000_5jpg" size="1.000000 0.700312" />
+    <ImageTarget name="1000_4jpg" size="1.000000 0.733956" />
+    <ImageTarget name="1000_3jpg" size="1.000000 0.729412" />
+    <ImageTarget name="1000_2jpg" size="1.000000 0.729412" />
+    <ImageTarget name="1000_1jpg" size="1.000000 0.733956" />
   </Tracking>
 </QCARConfig>
