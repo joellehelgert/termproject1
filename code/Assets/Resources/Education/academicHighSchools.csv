@@ -1,13 +1,13 @@
-Bezeichnung;Klassen;Sch�ler;Sch�lerinnen
-Bundeshandelsakademie (Rudigierstra�e 6);31;286;432
-Bundeshandelsakademie (Aubrunnerweg 4);23;208;249
-H�here technische Bundeslehranstalt (Goethestra�e 17);69;897;762
-H�here technische Bundeslehranstalt   (Paul-Hahn-Stra�e 4);74;1646;120
-H�here Bundeslehranstalt f�r k�nstlerische Gestaltung (Garnisonstra�e 25);10;30;275
-H�here Bundeslehranstalt f�r Mode- und Bekleidungstechnik und f�r wirtschaftliche Berufe (Bl�tenstra�e 23);22;40;450
-H�here Bundeslehranstalt f�r wirtschaftliche Berufe (Aubrunnerweg 4);17;39;342
-H�here Bundeslehranstalt f�r wirtschaftliche Berufe (Landwiedstra�e 80);34;98;623
-H�here Lehranstalt f�r wirtschaftliche Berufe des Schulvereins der Kreuzschwestern (Stockhofstra�e 10);10;58;191
-Fachschule f�r wirtschaftliche Berufe der Schwestern Oblatinnen des Heiligen Franz von Sales (Kapellenstra�e 8-10);4;7;65
-Fachschule f�r Sozialberufe der Caritas der Di�zese Linz (Schiefersederweg 53);10;26;187
-H�here Bundeslehranstalt f�r Land- und Ern�hrungswirtschaft (Elmbergweg 65);13;13;354
+Bezeichnung;Klassen;Sch�ler;Sch�lerinnen;Latitude;Longitude
+Bundeshandelsakademie (Rudigierstra�e 6);31;286;432;48,33421;14,320747
+Bundeshandelsakademie (Aubrunnerweg 4);23;208;249;48,300926;14,289335
+H�here technische Bundeslehranstalt (Goethestra�e 17);69;897;762;48,297273;14,294867
+H�here technische Bundeslehranstalt   (Paul-Hahn-Stra�e 4);74;1646;120;48,30623;14,310836
+H�here Bundeslehranstalt f�r k�nstlerische Gestaltung (Garnisonstra�e 25);10;30;275;48,30137;14,311613
+H�here Bundeslehranstalt f�r Mode- und Bekleidungstechnik und f�r wirtschaftliche Berufe (Bl�tenstra�e 23);22;40;450;48,315001;14,283361
+H�here Bundeslehranstalt f�r wirtschaftliche Berufe (Aubrunnerweg 4);17;39;342;48,334135;14,320397
+H�here Bundeslehranstalt f�r wirtschaftliche Berufe (Landwiedstra�e 80);34;98;623;48,267476;14,284474
+H�here Lehranstalt f�r wirtschaftliche Berufe des Schulvereins der Kreuzschwestern (Stockhofstra�e 10);10;58;191;48,297167;14,285765
+Fachschule f�r wirtschaftliche Berufe der Schwestern Oblatinnen des Heiligen Franz von Sales (Kapellenstra�e 8-10);4;7;65;48,311229;14,279194
+Fachschule f�r Sozialberufe der Caritas der Di�zese Linz (Schiefersederweg 53);10;26;187;48,332365;14,276565
+H�here Bundeslehranstalt f�r Land- und Ern�hrungswirtschaft (Elmbergweg 65);13;13;354;48,347592;14,328047

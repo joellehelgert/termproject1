@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
-public class DataLoader : MonoBehaviour
+[CreateAssetMenu(fileName = "DataStorage", menuName = "DataStorage")]
+public class DataLoader : ScriptableObject
 {
     public List<NonScholaric> kindergartens;
     public List<NonScholaric> dayCareCenter;
@@ -18,12 +19,13 @@ public class DataLoader : MonoBehaviour
     public List<Activity> activities;
     public List<Hospital> hospitals;
     public List<Districts> selectedDistricts;
+    public List<Transport> transports;
 
     // sorted by district numbers
-    public HousingInformation[] housingInformation; 
+    public HousingInformation[] housingInformation;
 
     // Use this for initialization
-    void Start()
+    public void LoadAllData()
     {
         LoadToddlerGroups();
         LoadKindergartens();
@@ -33,13 +35,62 @@ public class DataLoader : MonoBehaviour
         LoadSecondarySchools();
         LoadPolytechnicalSchools();
         LoadAcademicHighSchools();
-        LoadAgeStructure();
-        LoadYouthCenters();
         LoadActivities();
-        LoadHousingInformation();
         LoadHospitals();
         selectedDistricts = new List<Districts>();
         selectedDistricts.Add(Districts.InnereStadt);
+        LoadPublicTransport();
+
+        LoadYouthCenters();
+        LoadHousingInformation();
+        LoadAgeStructure();
+    }
+
+    public void LoadPublicTransport() {
+        string[] dataRows = DataLoadingHelpers.GetDataRows("Transportation/Stops");
+        string stop = "";
+        float x = 0f;
+        float y = 0f;
+        List<string> lines = new List<string>();
+        List<string> directions = new List<string>();
+        transports = new List<Transport>();
+
+        for (int i = 1; i < dataRows.Length - 1; i++)
+        {
+            Debug.Log("i: " + i + " datarow " + dataRows.Length);
+            string[] row = dataRows[i].Split(new char[] { ';' });
+            if(stop != row[0] && stop != "")
+            {
+                Debug.Log("lines: " + lines.Count);
+                bool isBim = lines[0].Contains("00");
+                Transport transport = new Transport
+                {
+                    name = stop,
+                    x = x,
+                    y = y,
+                    lines = lines,
+                    isBim = isBim,
+                    directions = directions,
+                };
+
+                transports.Add(transport);
+                lines.Clear();
+                directions.Clear();
+            }
+            
+            stop = row[0];
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[5]), out y);
+            float.TryParse(DataLoadingHelpers.FormatCoordinates(row[4]), out x);
+
+            Debug.Log("row " + row.Length);
+
+            string[] lineArray = row[2].Split(new char[] { ',' });
+            foreach(var line in lineArray) { lines.Add(line); }
+
+            string[] dirArray = row[2].Split(new char[] { ',' });
+            foreach (var dir in dirArray) { directions.Add(dir); }
+
+        }
     }
 
     public void LoadHospitals()
@@ -61,7 +112,6 @@ public class DataLoader : MonoBehaviour
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[8]), out hospital.longitude);
 
             hospitals.Add(hospital);
-            Debug.Log("hospital: " + hospital.name);
         }
     }
 
@@ -102,8 +152,6 @@ public class DataLoader : MonoBehaviour
 
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[12]), out activity.latitude);
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[13]), out activity.longitude);
-
-            activity.type = row[0] == "Sportanlage" ? ActivityType.Sportsground : ActivityType.Playground;
             activity.detailedActivityType = DataLoadingHelpers.GetDetailedActivityType(row[6]);
 
             activities.Add(activity);
@@ -194,7 +242,7 @@ public class DataLoader : MonoBehaviour
     public void LoadToddlerGroups()
     {
         string[] dataRows = DataLoadingHelpers.GetDataRows("Education/toddlerGroups");
-        dayCareCenter = DataLoadingHelpers.ConvertNonScholaric(dataRows, NonScholaricType.ToddlerGroup);
+        toddlerGroups = DataLoadingHelpers.ConvertNonScholaric(dataRows, NonScholaricType.ToddlerGroup);
     }
 
 }

@@ -9,9 +9,7 @@ public class School
     public int maleStudents;
     public int femaleStudents;
     public SchoolType type;
-
-    // Not provided yet
-    // public float longitude
-    // public float latitude
+    public float longitude;
+    public float latitude;
 
 }

@@ -1,21 +1,20 @@
-Bezeichnung;Klassen;Sch�ler;Sch�lerinnen
-Neue Mittelschule 3, Stelzhamerschule (Figulystra�e 15) ;12;150;122
-Neue Mittelschule 5, Otto-Gl�ckel-Schule (D�rrnbergerstra�e 1-3) ;15;176;133
-Neue Mittelschule 10, L�wenfeldschule (Zeppelinstra�e 44) ;13;146;123
-Neue Mittelschule 11, Diesterwegschule (Khevenh�llerstra�e 3) ;11;133;104
-Neue Mittelschule 12, Linz Harbach (In der Aichwiesen 16) ;10;86;128
-Neue Mittelschule 14, Spallerhofschule (Tungassingerstra�e 23) ;11;121;97
-Neue Mittelschule 15, Leonardo da Vinci (Jahnstra�e 3-5) ;8;82;108
-Neue Mittelschule 17, Dr.-Karl-Renner-Schule (Fl�tzerweg 88) ;13;152;157
-Neue Mittelschule 18, Dr.-Karl-Renner-Schule (Fl�tzerweg 88) ;13;152;127
-Neue Mittelschule 22, Dr.-Ernst-Koref-Schule (Ramsauerstra�e 61) ;12;119;157
-Neue Mittelschule 23, Ebelsbergschule (Ebelsberger Schlo�weg 26) ;9;121;68
-Hauptschule 24, Auhofschule (Aubrunnerweg 43) ;0;0;0
-Neue Mittelschule 26, F.-H�ttner-Schule (Wieningerstra�e 15) ;10;126;85
-Neue Mittelschule 27, B.-v.-Suttner-Schule (Dornacher Stra�e 35) ;8;110;70
-Sport-Neue Mittelschule Linz-Kleinm�nchen (Meindlstra�e 25);12;191;60
-Neue Praxismittelschule Europaschule der P�dagogischen Hochschule O� (Lederergasse 35);8;97;91
-Neue Mittelschule der Franziskanerinnen (Brucknerstra�e 8);10;94;143
-Neue Mittelschule des Schulvereins der Kreuzschwestern (Stockhofstra�e 10);8;89;91
-Neue Praxismittelschule der P�dagogischen Hochschule der Di�zese (Salesianumweg 5);8;95;96
-Adventistische Neue Mittelschule (Gr�nauerstra�e 20);1;2;7
+Bezeichnung;Klassen;Sch�ler;Sch�lerinnen;Lat;Lon
+Neue Mittelschule 3, Stelzhamerschule (Figulystra�e 15) ;12;150;122;48,294032;14,289004
+Neue Mittelschule 5, Otto-Gl�ckel-Schule (D�rrnbergerstra�e 1-3) ;15;176;133;48,287052;14,299291
+Neue Mittelschule 10, L�wenfeldschule (Zeppelinstra�e 44) ;13;146;123;48,254713;14,315016
+Neue Mittelschule 11, Diesterwegschule (Khevenh�llerstra�e 3) ;11;133;104;48,301337;14,30178
+Neue Mittelschule 12, Linz Harbach (In der Aichwiesen 16) ;10;86;128;48,328522;14,281533
+Neue Mittelschule 14, Spallerhofschule (Tungassingerstra�e 23) ;11;121;97;48,274232;14,299953
+Neue Mittelschule 15, Leonardo da Vinci (Jahnstra�e 3-5) ;8;82;108;48,312278;14,283184
+Neue Mittelschule 17, Dr.-Karl-Renner-Schule (Fl�tzerweg 88) ;13;152;157;48,250449;14,294568
+Neue Mittelschule 22, Dr.-Ernst-Koref-Schule (Ramsauerstra�e 61) ;12;119;157;48,272416;14,28872
+Neue Mittelschule 23, Ebelsbergschule (Ebelsberger Schlo�weg 26) ;9;121;68;48,247315;14,334441
+Hauptschule 24, Auhofschule (Aubrunnerweg 43) ;0;0;0;48,334106;14,321018
+Neue Mittelschule 26, F.-H�ttner-Schule (Wieningerstra�e 15) ;10;126;85;48,267267;14,282964
+Neue Mittelschule 27, B.-v.-Suttner-Schule (Dornacher Stra�e 35) ;8;110;70;48,333308;14,303579
+Sport-Neue Mittelschule Linz-Kleinm�nchen (Meindlstra�e 25);12;191;60;48,254152;14,301186
+Neue Praxismittelschule Europaschule der P�dagogischen Hochschule O� (Lederergasse 35);8;97;91;48,309092;14,297655
+Neue Mittelschule der Franziskanerinnen (Brucknerstra�e 8);10;94;143;48,2882;14,29807
+Neue Mittelschule des Schulvereins der Kreuzschwestern (Stockhofstra�e 10);8;89;91;48,297625;14,285909
+Neue Praxismittelschule der P�dagogischen Hochschule der Di�zese (Salesianumweg 5);8;95;96;48,296907;14,272317
+Adventistische Neue Mittelschule (Gr�nauerstra�e 20);1;2;7;48,300518;14,304522

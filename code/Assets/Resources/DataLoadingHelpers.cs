@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Text.RegularExpressions;
@@ -10,30 +9,18 @@ public static class DataLoadingHelpers
     {
         switch (type)
         {
-            case "Fitnessanlage":
-                return DetailedActivityTypes.Fitness;
 
             case "Beach Volleyball":
                 return DetailedActivityTypes.BeachVolleyball;
 
             case "Skateanlage":
                 return DetailedActivityTypes.SkatingTrack;
-
+            case "Fitnessanlage":
             case "Streetball":
-                return DetailedActivityTypes.Streetball;
-
             case "FunCourt":
-                return DetailedActivityTypes.FunCourt;
-
-            case "Kinder- und Jugendspielplatz (6 - 18 Jahre)":
-                return DetailedActivityTypes.PlaygroundForTeensAndKids;
-
-            case "Jugendspielplatz (12 - 18 Jahre)":
-                return DetailedActivityTypes.PlaygroundForTeens;
-
-            case "Kinderspielplatz(0 - 6 Jahre)":
+                return DetailedActivityTypes.Sportsground;
             default:
-                return DetailedActivityTypes.PlaygroundForKids;
+                return DetailedActivityTypes.Playground;
 
         }
     }
@@ -89,9 +76,9 @@ public static class DataLoadingHelpers
             int.TryParse(elementarySchool[2], out school.maleStudents);
             int.TryParse(elementarySchool[3], out school.femaleStudents);
 
-            // Not provided yet
-            // float.TryParse(elementarySchool[4], out school.latitude);
-            // float.TryParse(elementarySchool[5], out school.longitude);
+            Debug.Log("latitude: " + elementarySchool[4] + " longitude: " + elementarySchool[5]);
+            float.TryParse(FormatCoordinates(elementarySchool[4]), out school.latitude);
+            float.TryParse(FormatCoordinates(elementarySchool[5]), out school.longitude);
 
             schools.Add(school);
         }
@@ -106,6 +93,7 @@ public static class DataLoadingHelpers
         Regex regex = new Regex(Regex.Escape(" "));
         formated = regex.Replace(formated, ".", 1);
         formated = formated.Replace(" ", "");
+        formated = formated.Replace(",", ".");
 
         return formated;
     }
@@ -120,7 +108,7 @@ public static class DataLoadingHelpers
             districtNumber--;
 
             if (housingInformation[districtNumber] == null)
-                {
+            {
                 housingInformation[districtNumber] = new HousingInformation
                 {
                     district = (Districts)districtNumber
@@ -129,30 +117,30 @@ public static class DataLoadingHelpers
 
 
 
-                var information = Enum.GetValues(typeof(T));
-                int[] counts = new int[information.Length];
-                int counter = 0;
-                foreach (var inf in information)
-                {
-                    int.TryParse(row[(int)inf + 2], out counts[(int)inf]);
-                    counter += counts[(int)inf];
-                }
+            var information = Enum.GetValues(typeof(T));
+            int[] counts = new int[information.Length];
+            int counter = 0;
+            foreach (var inf in information)
+            {
+                int.TryParse(row[(int)inf + 2], out counts[(int)inf]);
+                counter += counts[(int)inf];
+            }
 
 
-                switch (prop)
-                {
-                    case "RoomsPerFlat":
-                        housingInformation[districtNumber].FlatCount = counter;
-                        housingInformation[districtNumber].RoomsPerFlat = counts;
-                        break;
-                    case "FlatsPerBuilding":
-                        housingInformation[districtNumber].FlatsPerBuilding = counts;
-                        break;
-                    case "FloorSpace":
-                        housingInformation[districtNumber].FloorSpace = counts;
-                        break;
+            switch (prop)
+            {
+                case "RoomsPerFlat":
+                    housingInformation[districtNumber].FlatCount = counter;
+                    housingInformation[districtNumber].RoomsPerFlat = counts;
+                    break;
+                case "FlatsPerBuilding":
+                    housingInformation[districtNumber].FlatsPerBuilding = counts;
+                    break;
+                case "FloorSpace":
+                    housingInformation[districtNumber].FloorSpace = counts;
+                    break;
 
-                }
+            }
         }
         return housingInformation;
     }

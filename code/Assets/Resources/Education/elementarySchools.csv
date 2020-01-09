@@ -1,42 +1,42 @@
-Bezeichnung;Klassen;Sch�ler;Sch�lerinnen
-Volksschule 1, Stelzhamerschule (Tegetthoffstra�e 23) ;5;40;54
-Volksschule 2, B.-v.-Suttner-Schule (Dornacherstra�e 33) ;9;92;69
-Volksschule 3, Auwiesenschule (Allendeplatz 1) ;15;157;146
-Volksschule 4, Mozartschule (Volksfeststra�e 7-11) ;9;95;85
-Volksschule 6, R�merbergschule (Donatusgasse 3a) ;7;82;76
-Volksschule 8, Goetheschule (S�dtirolerstra�e 13) ;9;103;89
-Volksschule 9, Froschbergschule (Ziegeleistra�e 29) ;5;52;48
-Volksschule 10, Grillparzerschule (Grillparzerstra�e 49) ;13;133;126
-Volksschule 12, Otto-Gl�ckel-Schule (Wiener Stra�e 42) ;11;128;112
-Volksschule 14, Weberschule (Webergasse 1) ;7;55;61
-Volksschule 16, Jahnschule (Jahnstra�e 7) ;6;44;44
-Volksschule 17, L�wenfeldschule (Zeppelinstra�e 44) ;14;160;122
-Volksschule 20, Diesterwegschule (Khevenh�llerstra�e 3) ;11;110;109
-Volksschule 21, Spallerhofschule (Tungassingerstra�e 23) ;10;89;101
-Volksschule 23, Dr.-Adolf-Sch�rf-Schule (Resselstra�e 8) ;13;143;151
-Volksschule 26, Harbachschule (Keplerstra�e 11) ;14;141;114
-Volksschule 28, Dr.-Karl-Renner-Schule (Fl�tzerweg 61) ;14;137;137
-Volksschule 30, Dr.-Ernst-Koref-Schule (Ramsauerstra�e 61) ;13;120;136
-Volksschule 32, Keferfeldschule (Seeauerweg 1) ;9;104;85
-Volksschule 33, Dorfhalleschule (Franckstra�e 70) ;11;101;102
-Volksschule 35, Siemensschule (Siemensstra�e 58) ;17;190;146
-Volksschule 37, Karlhofschule (H�lderlinstra�e 9) ;15;151;159
-Volksschule 39, Margarethenschule (Margarethen 23) ;4;36;28
-Volksschule 40, Volksschule Dornach (Mengerstra�e 25) ;9;97;80
-Volksschule 41, P�stlingbergschule (Samhaberstra�e 48) ;4;38;43
-Volksschule 42, Magdalenaschule (Oberbairinger Stra�e 1) ;8;101;68
-Volksschule 43, Stadlerschule (Stadlerstra�e 45) ;10;103;86
-Volksschule 44, Pichling (Rathfeldstra�e 69) ;10;119;85
-Volksschule 45, Hausleitnerweg (Hausleitnerweg 52) ;10;109;99
-Volksschule 46, Theodor-Grill-Schule (Scharm�hlwinkel 3) ;12;111;107
-Volksschule 47, Dr.-Adolf-Sch�rf-Schule (Resselstra�e 4-6) ;13;124;103
-Volksschule 48, Edmund-Aigner-Schule (H�ndelstra�e 42) ;9;90;67
-Volksschule 49, Robinson-Schule (Kaltenhauserstra�e 2) ;11;101;92
-Volksschule 50, F.-H�ttner-Schule (Wieningerstra�e 17) ;12;116;88
-Volksschule 51, Auhofschule (Aubrunnerweg 43) ;4;39;32
-Volksschule 52, solarCity-Pichling (Heliosallee 140-142) ;13;119;117
-Praxisvolksschule Europaschule der P�dagogischen Hochschule O� (Lederergasse 35);8;100;89
-Volksschule der Franziskanerinnen (Brucknerstra�e 8);8;71;121
-Volksschule des Schulvereins der Kreuzschwestern (Stockhofstra�e 10);8;95;98
-Praxisvolksschule der P�dagogischen Hochschule der Di�zese (Kapuzinerstra�e 51);9;101;95
-Adventistische Volksschule (Gr�nauerstra�e 20);1;4;0
+Bezeichnung;Klassen;Sch�ler;Sch�lerinnen;Lat;Lon;
+Volksschule 1, Stelzhamerschule (Tegetthoffstra�e 23) ;5;40;54;48,293558;14,288874;
+Volksschule 2, B.-v.-Suttner-Schule (Dornacherstra�e 33) ;9;92;69;48,333511;14,304865;
+Volksschule 3, Auwiesenschule (Allendeplatz 1) ;15;157;146;48,250486;14,310638;
+Volksschule 4, Mozartschule (Volksfeststra�e 7-11) ;9;95;85;48,302072;14,296028;
+Volksschule 6, R�merbergschule (Donatusgasse 3a) ;7;82;76;48,301734;14,273456;
+Volksschule 8, Goetheschule (S�dtirolerstra�e 13) ;9;103;89;48,297437;14,293908;
+Volksschule 9, Froschbergschule (Ziegeleistra�e 29) ;5;52;48;48,290261;14,281325;
+Volksschule 10, Grillparzerschule (Grillparzerstra�e 49) ;13;133;126;48,290009;14,300311;
+Volksschule 12, Otto-Gl�ckel-Schule (Wiener Stra�e 42) ;11;128;112;48,287129;14,299977;
+Volksschule 14, Weberschule (Webergasse 1) ;7;55;61;48,308412;14,278555;
+Volksschule 16, Jahnschule (Jahnstra�e 7) ;6;44;44;48,312752;14,282829;
+Volksschule 17, L�wenfeldschule (Zeppelinstra�e 44) ;14;160;122;48,254682;14,314635;
+Volksschule 20, Diesterwegschule (Khevenh�llerstra�e 3) ;11;110;109;48,301667;14,301912;
+Volksschule 21, Spallerhofschule (Tungassingerstra�e 23) ;10;89;101;48,274246;14,299921;
+Volksschule 23, Dr.-Adolf-Sch�rf-Schule (Resselstra�e 8) ;13;143;151;48,241516;14,332465;
+Volksschule 26, Harbachschule (Keplerstra�e 11) ;14;141;114;48,328567;14,282184;
+Volksschule 28, Dr.-Karl-Renner-Schule (Fl�tzerweg 61) ;14;137;137;48,249949;14,295455;
+Volksschule 30, Dr.-Ernst-Koref-Schule (Ramsauerstra�e 61) ;13;120;136;48,272404;14,288723;
+Volksschule 32, Keferfeldschule (Seeauerweg 1) ;9;104;85;48,2755;14,278328;
+Volksschule 33, Dorfhalleschule (Franckstra�e 70) ;11;101;102;48,291591;14,315911;
+Volksschule 35, Siemensschule (Siemensstra�e 58) ;17;190;146;48,247979;14,283772;
+Volksschule 37, Karlhofschule (H�lderlinstra�e 9) ;15;151;159;48,321291;14,280928;
+Volksschule 39, Margarethenschule (Margarethen 23) ;4;36;28;48,30728;14,256746;
+Volksschule 40, Volksschule Dornach (Mengerstra�e 25) ;9;97;80;48,336013;14,315945;
+Volksschule 41, P�stlingbergschule (Samhaberstra�e 48) ;4;38;43;48,324838;14,259972;
+Volksschule 42, Magdalenaschule (Oberbairinger Stra�e 1) ;8;101;68;48,336765;14,303915;
+Volksschule 43, Stadlerschule (Stadlerstra�e 45) ;10;103;86;48,268825;14,288016;
+Volksschule 44, Pichling (Rathfeldstra�e 69) ;10;119;85;48,243992;14,36685;
+Volksschule 45, Hausleitnerweg (Hausleitnerweg 52) ;10;109;99;48,271294;14,303342;
+Volksschule 46, Theodor-Grill-Schule (Scharm�hlwinkel 3) ;12;111;107;48,250692;14,304949;
+Volksschule 47, Dr.-Adolf-Sch�rf-Schule (Resselstra�e 4-6) ;13;124;103;48,242145;14,331893;
+Volksschule 48, Edmund-Aigner-Schule (H�ndelstra�e 42) ;9;90;67;48,2893;14,275119;
+Volksschule 49, Robinson-Schule (Kaltenhauserstra�e 2) ;11;101;92;48,290023;14,300311;
+Volksschule 50, F.-H�ttner-Schule (Wieningerstra�e 17) ;12;116;88;48,266458;14,283723;
+Volksschule 51, Auhofschule (Aubrunnerweg 43) ;4;39;32;48,332879;14,32463;
+Volksschule 52, solarCity-Pichling (Heliosallee 140-142) ;13;119;117;48,255836;14,361167;
+Praxisvolksschule Europaschule der P�dagogischen Hochschule O� (Lederergasse 35);8;100;89;48,308995;14,297661;
+Volksschule der Franziskanerinnen (Brucknerstra�e 8);8;71;121;48,2882;14,298038;
+Volksschule des Schulvereins der Kreuzschwestern (Stockhofstra�e 10);8;95;98;48,297629;14,285896;
+Praxisvolksschule der P�dagogischen Hochschule der Di�zese (Kapuzinerstra�e 51);9;101;95;48,297745;14,277496;
+Adventistische Volksschule (Gr�nauerstra�e 20);1;4;0;48,300512;14,304537;
