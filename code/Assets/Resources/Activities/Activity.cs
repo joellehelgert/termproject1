@@ -2,7 +2,6 @@
 public class Activity
 {
     public string name;
-    public ActivityType type;
     public string area;
     public Districts district;
     public string urbanArea; // NEEDED ?
@@ -15,22 +14,10 @@ public class Activity
     public float longitude; // Koordinate Ost
 }
 
-
-public enum ActivityType
-{
-    Playground,
-    Sportsground,
-}
-
-
 public enum DetailedActivityTypes
 {
-    Fitness,
     BeachVolleyball,
     SkatingTrack,
-    Streetball,
-    FunCourt,
-    PlaygroundForTeens, // 12 - 18
-    PlaygroundForKids, // 0 - 6
-    PlaygroundForTeensAndKids, // 6 - 18
+    Sportsground,
+    Playground
 }
