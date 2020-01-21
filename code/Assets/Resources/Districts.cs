@@ -18,3 +18,4 @@ public enum Districts
     Ebelsberg,
     Pichling
 }
+
