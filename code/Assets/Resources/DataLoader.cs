@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using UnityEditor;
+using UnityEngine.UI;
 using System;
 using System.Linq;
 
@@ -21,6 +24,7 @@ public class DataLoader : ScriptableObject
     public List<Districts> selectedDistricts;
     public List<Transport> transports;
 
+
     // sorted by district numbers
     public HousingInformation[] housingInformation;
 
@@ -37,13 +41,17 @@ public class DataLoader : ScriptableObject
         LoadAcademicHighSchools();
         LoadActivities();
         LoadHospitals();
+        //var dropdown = m_Dropdown.GetComponent<Dropdown>();
+        //Debug.Log("Starting Dropdown Value : " + m_Dropdown.value);
         selectedDistricts = new List<Districts>();
         selectedDistricts.Add(Districts.InnereStadt);
-        LoadPublicTransport();
+        //LoadPublicTransport();
 
         LoadYouthCenters();
         LoadHousingInformation();
         LoadAgeStructure();
+
+        
     }
 
     public void LoadPublicTransport() {
@@ -173,10 +181,11 @@ public class DataLoader : ScriptableObject
                 district = (Districts)(i - 1)
             };
 
-            for(int age = 2; age < dataRows.Length -1; age++)
+            for(int age = 2; age < row.Length -1; age++)
             {
-                int.TryParse(dataRows[age], out int results);
-                distribution.ages.Add(results); 
+                Debug.Log(row[age]);
+                int.TryParse(row[age], out int results);
+                distribution.ages.Add(results);
             }
 
             ageDistributions.Add(distribution);
