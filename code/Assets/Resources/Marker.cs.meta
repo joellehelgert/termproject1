@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 566210c50665540a3b39eafd4e25f0fc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hospital: {fileID: 7945470206313987714, guid: 653a16b235fac40c4816a5523c68a496,
+      type: 3}
+  - busStop: {fileID: 7946862622934998691, guid: e0ac0a17d43454a42a9052bf611bda8e,
+      type: 3}
+  - train: {fileID: 3247876802441240640, guid: 702a136e4622444afacb7bf09ca5bbe3, type: 3}
+  - nonScholaric: {fileID: 1448933256297106879, guid: 883fb7f68c37a4673ac2d86a4f2b27d5,
+      type: 3}
+  - basketball: {fileID: 6545137744239392468, guid: f3370db7ff1af4b5bbc5adbb268336ce,
+      type: 3}
+  - playground: {fileID: 7934310065000603726, guid: ae0c975e5675844e081bf85a34638160,
+      type: 3}
+  - higherEducation: {instanceID: 0}
+  - lowerEducation: {instanceID: 0}
+  - skateTrack: {instanceID: 0}
+  - volleyball: {instanceID: 0}
+  - dataLoader: {fileID: 11400000, guid: 4f0a6374e181e4a3ca3a479f2b33af02, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

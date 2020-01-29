@@ -65,11 +65,9 @@ public class DataLoader : ScriptableObject
 
         for (int i = 1; i < dataRows.Length - 1; i++)
         {
-            Debug.Log("i: " + i + " datarow " + dataRows.Length);
             string[] row = dataRows[i].Split(new char[] { ';' });
             if(stop != row[0] && stop != "")
             {
-                Debug.Log("lines: " + lines.Count);
                 bool isBim = lines[0].Contains("00");
                 Transport transport = new Transport
                 {
@@ -90,7 +88,6 @@ public class DataLoader : ScriptableObject
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[5]), out y);
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[4]), out x);
 
-            Debug.Log("row " + row.Length);
 
             string[] lineArray = row[2].Split(new char[] { ',' });
             foreach(var line in lineArray) { lines.Add(line); }
@@ -183,7 +180,6 @@ public class DataLoader : ScriptableObject
 
             for(int age = 2; age < row.Length -1; age++)
             {
-                Debug.Log(row[age]);
                 int.TryParse(row[age], out int results);
                 distribution.ages.Add(results);
             }

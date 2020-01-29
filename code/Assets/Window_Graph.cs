@@ -33,32 +33,32 @@ public class Window_Graph : MonoBehaviour {
     // public GameObject buttonA;
 
     private void Awake() {
-        graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
-        labelTemplateX = graphContainer.Find("labelTemplateX").GetComponent<RectTransform>();
-        labelTemplateY = graphContainer.Find("labelTemplateY").GetComponent<RectTransform>();
-        //dashTemplateX = graphContainer.Find("dashTemplateX").GetComponent<RectTransform>();
-        //dashTemplateY = graphContainer.Find("dashTemplateY").GetComponent<RectTransform>();
+        //graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
+        //labelTemplateX = graphContainer.Find("labelTemplateX").GetComponent<RectTransform>();
+        //labelTemplateY = graphContainer.Find("labelTemplateY").GetComponent<RectTransform>();
+        ////dashTemplateX = graphContainer.Find("dashTemplateX").GetComponent<RectTransform>();
+        ////dashTemplateY = graphContainer.Find("dashTemplateY").GetComponent<RectTransform>();
 
 
-        gameObjectList = new List<GameObject>();
+        //gameObjectList = new List<GameObject>();
         
 
-        //List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
-        //ShowGraph(valueList, -1, (int _i) => "Day " + (_i + 1), (float _f) => "$" + Mathf.RoundToInt(_f));
-        dataLoader.LoadAllData(); 
-        List<AgeDistribution> ageDistributions = dataLoader.ageDistributions;
+        ////List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
+        ////ShowGraph(valueList, -1, (int _i) => "Day " + (_i + 1), (float _f) => "$" + Mathf.RoundToInt(_f));
+        //dataLoader.LoadAllData(); 
+        //List<AgeDistribution> ageDistributions = dataLoader.ageDistributions;
 
-        foreach (var value in ageDistributions)
-        {
-            foreach (Districts district in dataLoader.selectedDistricts)
-            {
-                if (district == value.district)
-                {
-                    Debug.Log("Age: " + value.ages);
-                    ShowGraph(value.ages, -1, (int _i) => " " + (_i + 1), (float _f) => " " + Mathf.RoundToInt(_f));
-                }
-            }
-        }
+        //foreach (var value in ageDistributions)
+        //{
+        //    foreach (Districts district in dataLoader.selectedDistricts)
+        //    {
+        //        if (district == value.district)
+        //        {
+        //            Debug.Log("Age: " + value.ages);
+        //            ShowGraph(value.ages, -1, (int _i) => " " + (_i + 1), (float _f) => " " + Mathf.RoundToInt(_f));
+        //        }
+        //    }
+        //}
         
     }
 
