@@ -60,6 +60,12 @@ public class DataLoader : ScriptableObject
         Debug.Log("Length: " + selectedDistricts.Count);
     }
 
+    public void removeDistrict()
+    {
+        selectedDistricts.Clear();
+        Debug.Log("Length: " + selectedDistricts.Count);
+    }
+
     public List<Districts> getDistricts()
     {
         //Debug.Log("Length: " + selectedDistricts.Count);

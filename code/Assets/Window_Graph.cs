@@ -83,6 +83,7 @@ public class Window_Graph : MonoBehaviour
                 }
             }
         }
+        dataLoader.removeDistrict();
     }
 
     private void ShowGraph(List<int> valueList, int maxVisibleValueAmount = -1, Func<int, string> getAxisLabelX = null, Func<float, string> getAxisLabelY = null)
@@ -189,15 +190,16 @@ public class Window_Graph : MonoBehaviour
             xIndex++;
         }
 
-
+        RectTransform labelY = Instantiate(labelTemplateY);
+        float normalizedValue = 0;
         for (int i = 0; i <= separatorCount; i++)
         {
-            RectTransform labelY = Instantiate(labelTemplateY);
+            labelY = Instantiate(labelTemplateY);
             labelY.SetParent(graphContainer, false);
             labelY.gameObject.SetActive(true);
-            float normalizedValue = i * 1f / separatorCount;
+            normalizedValue = i * 1f / separatorCount;
             //if (i % 2 == 0){
-                labelY.anchoredPosition = new Vector2(-7f, normalizedValue * graphHeight);
+            labelY.anchoredPosition = new Vector2(-7f, normalizedValue * graphHeight);
                 labelY.GetComponent<Text>().text = getAxisLabelY((yMinimum + (normalizedValue * (yMaximum - yMinimum))));
                 gameObjectList.Add(labelY.gameObject);
             //}
@@ -208,6 +210,19 @@ public class Window_Graph : MonoBehaviour
              dashY.anchoredPosition = new Vector2(-4f, normalizedValue * graphHeight);
              gameObjectList.Add(dashY.gameObject);*/
         }
+
+        labelY = Instantiate(labelTemplateY);
+        labelY.SetParent(graphContainer, false);
+        labelY.gameObject.SetActive(true);
+        normalizedValue = 21 * 1f / separatorCount;
+        //if (i % 2 == 0){
+        labelY.anchoredPosition = new Vector2(-7f, normalizedValue * graphHeight);
+        foreach (Districts district in dataLoader.getDistricts())
+        {
+            labelY.GetComponent<Text>().text = district.ToString();
+            labelY.GetComponent<Text>().color = new Color32(128, 12, 232, 91);
+        }
+        gameObjectList.Add(labelY.gameObject);
     }
 
     private GameObject CreateDot(Vector2 anchoredPosition)
