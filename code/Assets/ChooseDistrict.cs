@@ -7,13 +7,17 @@ using System;
 
 public class ChooseDistrict : MonoBehaviour
 {
-    
+
     // List<string> names = new List<string>() { "New Text","Fred", "Barney", "Wilma" };
 
     public Dropdown dropdown;
+    [SerializeField]
+    public DataLoader dataLoader;
     public void Dropdown_IndexChanged(int index)
     {
         Districts name = (Districts)index;
+        Debug.Log(dataLoader);
+        dataLoader.addDistrict(name);
 
     }
 
@@ -30,7 +34,7 @@ public class ChooseDistrict : MonoBehaviour
         dropdown.AddOptions(districts);
     }
 
-   
 
-    
+
+
 }
