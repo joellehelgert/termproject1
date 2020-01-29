@@ -32,7 +32,7 @@ public class Window_Graph : MonoBehaviour
     public List<int> valueList = new List<int>() { };
     [SerializeField]
     public DataLoader dataLoader;
-    // public GameObject buttonA;
+    private bool LinzData = false;
 
     private void Awake()
     {
@@ -67,10 +67,18 @@ public class Window_Graph : MonoBehaviour
             // Age Distribiution Graph for data for Linz 
             foreach (Districts district in dataLoader.getDistricts())
             {
-                Debug.Log("#district: " + district);
+                if(district.ToString() == "Linz")
+                {
+                    LinzData = true; 
+                    Debug.Log("Linz "+LinzData); 
+                }
+                else
+                {
+                    LinzData = false;
+                    graphContainer.sizeDelta = new Vector2(100, 100);
+                }
                 if (district == value.district)
                 {
-                    Debug.Log("district: " + district);
                     ShowGraph(value.ages, -1, (int _i) => " " + (_i + 1), (float _f) => " " + Mathf.RoundToInt(_f));
                 }
             }
@@ -103,6 +111,11 @@ public class Window_Graph : MonoBehaviour
 
         float graphWidth = (graphContainer.sizeDelta.x) * 2;
         float graphHeight = graphContainer.sizeDelta.y;
+        if (LinzData == true)
+        {
+            graphHeight = graphContainer.sizeDelta.y * 2;
+            graphContainer.sizeDelta = new Vector2(100, 150);
+        }
 
         float yMaximum = valueList[0];
         float yMinimum = valueList[0];
@@ -119,6 +132,8 @@ public class Window_Graph : MonoBehaviour
                 yMinimum = value;
             }
         }
+        Debug.Log("Max: "+yMaximum);
+        Debug.Log("Min: " + yMinimum);
 
         float yDifference = yMaximum - yMinimum;
         if (yDifference <= 0)
@@ -181,10 +196,11 @@ public class Window_Graph : MonoBehaviour
             labelY.SetParent(graphContainer, false);
             labelY.gameObject.SetActive(true);
             float normalizedValue = i * 1f / separatorCount;
-            labelY.anchoredPosition = new Vector2(-7f, normalizedValue * graphHeight);
-            // labelY.GetComponent<Text>().text = getAxisLabelY((yMinimum + (normalizedValue * (yMaximum - yMinimum))));
-            labelY.GetComponent<Text>().text = getAxisLabelY((yMinimum + (normalizedValue * (yMaximum - yMinimum))));
-            gameObjectList.Add(labelY.gameObject);
+            //if (i % 2 == 0){
+                labelY.anchoredPosition = new Vector2(-7f, normalizedValue * graphHeight);
+                labelY.GetComponent<Text>().text = getAxisLabelY((yMinimum + (normalizedValue * (yMaximum - yMinimum))));
+                gameObjectList.Add(labelY.gameObject);
+            //}
 
             /* RectTransform dashY = Instantiate(dashTemplateY);
              dashY.SetParent(graphContainer, false);

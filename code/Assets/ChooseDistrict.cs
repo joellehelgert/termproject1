@@ -15,14 +15,16 @@ public class ChooseDistrict : MonoBehaviour
     public DataLoader dataLoader;
     public void Dropdown_IndexChanged(int index)
     {
-        Districts name = (Districts)index;
-        Debug.Log(dataLoader);
+        
+        Districts name = (Districts)index-1;
         dataLoader.addDistrict(name);
+        Debug.Log("District Length after adding: "+dataLoader.selectedDistricts.Count);
 
     }
 
     private void Start()
     {
+        Debug.Log("District Length before adding: " + dataLoader.selectedDistricts.Count);
         PopulateList();
     }
 

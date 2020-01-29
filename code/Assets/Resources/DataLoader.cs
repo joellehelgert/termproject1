@@ -55,13 +55,14 @@ public class DataLoader : ScriptableObject
 
     public void addDistrict(Districts district)
     {
+        selectedDistricts.Clear();
         selectedDistricts.Add(district);
         Debug.Log("Length: " + selectedDistricts.Count);
     }
 
     public List<Districts> getDistricts()
     {
-        Debug.Log("Length: " + selectedDistricts.Count);
+        //Debug.Log("Length: " + selectedDistricts.Count);
         return selectedDistricts;
     }
 
