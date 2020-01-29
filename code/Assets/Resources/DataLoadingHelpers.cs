@@ -76,7 +76,7 @@ public static class DataLoadingHelpers
             int.TryParse(elementarySchool[2], out school.maleStudents);
             int.TryParse(elementarySchool[3], out school.femaleStudents);
 
-            Debug.Log("latitude: " + elementarySchool[4] + " longitude: " + elementarySchool[5]);
+            //Debug.Log("latitude: " + elementarySchool[4] + " longitude: " + elementarySchool[5]);
             float.TryParse(FormatCoordinates(elementarySchool[4]), out school.latitude);
             float.TryParse(FormatCoordinates(elementarySchool[5]), out school.longitude);
 
