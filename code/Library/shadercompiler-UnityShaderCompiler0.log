@@ -1,3 +1,58 @@
 Base path: /Applications/Unity/Hub/Editor/2018.4.11f1/Unity.app/Contents
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=816 outsize=816 ok=1
+Cmd: preprocess
+  insize=2345 outsize=898 ok=1
+Cmd: preprocess
+  insize=1515 outsize=1515 ok=1
+Cmd: preprocess
+  insize=1321 outsize=1321 ok=1
+Cmd: preprocess
+  insize=1140 outsize=476 ok=1
+Cmd: preprocess
+  insize=1913 outsize=1037 ok=1
+Cmd: preprocess
+  insize=890 outsize=890 ok=1
+Cmd: preprocess
+  insize=3170 outsize=811 ok=1
+Cmd: preprocess
+  insize=690 outsize=690 ok=1
+Cmd: preprocess
+  insize=3207 outsize=1205 ok=1
+Cmd: preprocess
+  insize=1907 outsize=1289 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
 Cmd: initializeCompiler

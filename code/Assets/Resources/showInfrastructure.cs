@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class showInfrastructure : MonoBehaviour
 {
@@ -42,6 +43,27 @@ public class showInfrastructure : MonoBehaviour
             marker.CreateMarker(type, dataLoader);
         }
     }
+
+    public void ToggleDistricts()
+    {
+        GameObject button = GameObject.Find("Visualize Districts");
+        GameObject text = GameObject.Find("Toggle Districts");
+
+        if (button.GetComponent<Toggle>().isOn)
+        {
+            text.GetComponent<Text>().text = "Hide Districts";
+        } else
+        {
+            text.GetComponent<Text>().text = "Show Districts";
+        }
+
+        GameObject parent = GameObject.Find("Districts");
+
+        if(parent) {
+            foreach (Transform child in parent.transform)
+                child.gameObject.SetActive(!child.gameObject.activeSelf);
+        }
+    } 
 
     
 }

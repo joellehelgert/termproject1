@@ -86,16 +86,6 @@ public class Marker : MonoBehaviour
                 dataLoader.LoadPolytechnicalSchools();
                 CreatePolytechnicalSchools(dataLoader, type);
                 break;
-            case "education":
-                dataLoader.LoadAcademicHighSchools();
-                CreateAcademicHighSchools(dataLoader, type);
-                dataLoader.LoadPolytechnicalSchools();
-                CreatePolytechnicalSchools(dataLoader, type);
-                dataLoader.LoadSecondarySchools();
-                CreateSecondarySchools(dataLoader, type);
-                dataLoader.LoadElementarySchools();
-                CreateElementarySchools(dataLoader, type);
-                break;
 
         }
     }
@@ -118,6 +108,9 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
+
     }
 
     private void CreateActivities(DataLoader dataLoader, string type)
@@ -138,6 +131,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private GameObject GetActivityVisual(DetailedActivityTypes type)
@@ -174,6 +169,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private void CreateDayCareCenters(DataLoader dataLoader, string type)
@@ -192,6 +189,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private void CreateKindergardens(DataLoader dataLoader, string type)
@@ -209,6 +208,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private void CreateElementarySchools(DataLoader dataLoader, string type)
@@ -227,6 +228,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
 
@@ -246,6 +249,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private void CreateSecondarySchools(DataLoader dataLoader, string type)
@@ -264,6 +269,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private void CreatePolytechnicalSchools(DataLoader dataLoader, string type)
@@ -282,6 +289,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private void CreatePublicTransport(DataLoader dataLoader, string type)
@@ -298,7 +307,7 @@ public class Marker : MonoBehaviour
             busStopVisual = (Instantiate(busStop, new Vector3(vector.x, 0, vector.y), Quaternion.identity) as GameObject);
             busStopVisual.transform.parent = wrapper.transform;
         }
-        wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.SetParent(parent.transform); wrapper.transform.localPosition = new Vector3(0f, 0f, 0f); wrapper.transform.localRotation = Quaternion.identity;
     }
 
     private void Create(string type, string prefabName, List<PointBasedData> data)
@@ -319,6 +328,8 @@ public class Marker : MonoBehaviour
         }
 
         wrapper.transform.SetParent(parent.transform);
+        wrapper.transform.localPosition = new Vector3(0f, 0f, 0f);
+        wrapper.transform.localRotation = Quaternion.identity;
     }
 
 }

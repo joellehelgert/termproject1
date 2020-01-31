@@ -11,10 +11,10 @@ public class Utils
     static float refLongitude1 = 14.2855114f;
     static float refLongitude2 = 14.2841256f;
 
-    static float refPosition1_y = 0.2793f;
-    static float refPosition1_x = -0.1435f;
-    static float refPosition2_x = -0.1536f;
-    static float refPosition2_y = 0.3016f;
+    static float refPosition1_y = 0.2754f;
+    static float refPosition1_x = -0.4584f;
+    static float refPosition2_x = -0.4723f;
+    static float refPosition2_y = 0.3058f;
 
     static float lengthLat = refLatitude1 - refLatitude2;
     static float lengthLong = refLongitude1 - refLongitude2;
