@@ -16,6 +16,7 @@ public enum Districts
     KleinmünchenAuwiesen,
     IndustriegebietHafen,
     Ebelsberg,
-    Pichling
+    Pichling,
+    Linz
 }
 

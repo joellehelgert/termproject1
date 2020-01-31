@@ -21,9 +21,8 @@ public class DataLoader : ScriptableObject
     public List<AgeDistribution> ageDistributions;
     public List<Activity> activities;
     public List<Hospital> hospitals;
-    public List<Districts> selectedDistricts;
+    public List<Districts> selectedDistricts = new List<Districts>();
     public List<Transport> transports;
-
 
     // sorted by district numbers
     public HousingInformation[] housingInformation;
@@ -41,20 +40,40 @@ public class DataLoader : ScriptableObject
         LoadAcademicHighSchools();
         LoadActivities();
         LoadHospitals();
-        //var dropdown = m_Dropdown.GetComponent<Dropdown>();
-        //Debug.Log("Starting Dropdown Value : " + m_Dropdown.value);
-        selectedDistricts = new List<Districts>();
-        selectedDistricts.Add(Districts.InnereStadt);
+        //selectedDistricts.Add(Districts.InnereStadt);
         //LoadPublicTransport();
 
         LoadYouthCenters();
         LoadHousingInformation();
         LoadAgeStructure();
 
-        
+
+
+
+
     }
 
-    public void LoadPublicTransport() {
+    public void addDistrict(Districts district)
+    {
+        selectedDistricts.Clear();
+        selectedDistricts.Add(district);
+        Debug.Log("Length: " + selectedDistricts.Count);
+    }
+
+    public void removeDistrict()
+    {
+        selectedDistricts.Clear();
+        Debug.Log("Length: " + selectedDistricts.Count);
+    }
+
+    public List<Districts> getDistricts()
+    {
+        //Debug.Log("Length: " + selectedDistricts.Count);
+        return selectedDistricts;
+    }
+
+    public void LoadPublicTransport()
+    {
         string[] dataRows = DataLoadingHelpers.GetDataRows("Transportation/Stops");
         string stop = "";
         float x = 0f;
@@ -66,7 +85,7 @@ public class DataLoader : ScriptableObject
         for (int i = 1; i < dataRows.Length - 1; i++)
         {
             string[] row = dataRows[i].Split(new char[] { ';' });
-            if(stop != row[0] && stop != "")
+            if (stop != row[0] && stop != "")
             {
                 bool isBim = lines[0].Contains("00");
                 Transport transport = new Transport
@@ -83,14 +102,14 @@ public class DataLoader : ScriptableObject
                 lines.Clear();
                 directions.Clear();
             }
-            
+
             stop = row[0];
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[5]), out y);
             float.TryParse(DataLoadingHelpers.FormatCoordinates(row[4]), out x);
 
 
             string[] lineArray = row[2].Split(new char[] { ',' });
-            foreach(var line in lineArray) { lines.Add(line); }
+            foreach (var line in lineArray) { lines.Add(line); }
 
             string[] dirArray = row[2].Split(new char[] { ',' });
             foreach (var dir in dirArray) { directions.Add(dir); }
@@ -143,7 +162,8 @@ public class DataLoader : ScriptableObject
         for (int i = 1; i < dataRows.Length - 1; i++)
         {
             string[] row = dataRows[i].Split(new char[] { ';' });
-            Activity activity = new Activity {
+            Activity activity = new Activity
+            {
                 name = row[1],
                 area = row[2],
                 urbanArea = row[5],
@@ -178,7 +198,7 @@ public class DataLoader : ScriptableObject
                 district = (Districts)(i - 1)
             };
 
-            for(int age = 2; age < row.Length -1; age++)
+            for (int age = 2; age < row.Length - 1; age++)
             {
                 int.TryParse(row[age], out int results);
                 distribution.ages.Add(results);
@@ -196,7 +216,7 @@ public class DataLoader : ScriptableObject
         specialNeedsSchools = DataLoadingHelpers.ConvertSchool(dataRows, SchoolType.SpecialNeedsSchool);
 
     }
-    
+
     public void LoadAcademicHighSchools()
     {
         string[] dataRows = DataLoadingHelpers.GetDataRows("Education/academicHighSchools");
