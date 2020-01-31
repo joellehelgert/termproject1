@@ -10,6 +10,7 @@ public class MenuFader : MonoBehaviour
 {
 
     public CanvasGroup uiElement;
+    //public List<CanvasGroup> uiElements;
 
     public void FadeIn()
     {
