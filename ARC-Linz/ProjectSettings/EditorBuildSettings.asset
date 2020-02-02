@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 7f9bb563e3b37fd4bb06bbeecb2880bd
+  - enabled: 0
+    path: Assets/Scenes/Vuforia.unity
+    guid: bb4a9906b842347c5b2d80b2b599372f
+  - enabled: 0
+    path: Assets/Scenes/Age.unity
+    guid: 6e77466fca601db4e9421e3d4da09254
+  - enabled: 0
+    path: Assets/Scenes/Main.unity
+    guid: 151177cc731ff4916a67d68dea077ddf
+  m_configObjects: {}
